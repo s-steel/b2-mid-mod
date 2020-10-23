@@ -9,7 +9,7 @@
 
 <h5>Add a ride to their workload:</h5>
 
-<%= form_tag "/mechanics/#{@mechanic.id}/edit", method: :patch do %>
+<%= form_tag "/mechanics/#{@mechanic.id}", method: :patch do %>
   <%= label_tag "Ride id:" %>
   <%= text_field_tag :add_ride %><br>
   <%= submit_tag 'Submit' %>

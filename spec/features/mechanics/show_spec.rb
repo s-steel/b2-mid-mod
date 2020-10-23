@@ -34,11 +34,15 @@ describe 'mechanic show page' do
 
   it 'can submit form, return to show page, and see the added ride' do
     ride4 = Ride.create(name: 'The Kiss Raise', rating: 3, park_id: park.id)
-    # mech_ride4 = MechanicRide.create(ride_id: ride3.id, mechanic_id: mechanic.id)
+
     fill_in :add_ride, with: ride4.id
     click_button 'Submit'
     expect(current_path).to eq("/mechanics/#{mechanic.id}")
 
     expect(page).to have_content(ride4.name)
+
+    expect(page).to have_content('Add a ride to their workload:')
+    expect(page.has_field?(:add_ride, type: 'text')).to eq(true)
+    expect(page).to have_button('Submit')
   end
 end
