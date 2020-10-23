@@ -47,6 +47,6 @@ describe 'mechanic show page' do
   end
 
   it 'shows all rides in alphabetical order' do
-save_and_open_page
+
   end
 end
