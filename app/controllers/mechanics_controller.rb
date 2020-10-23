@@ -5,7 +5,7 @@ class MechanicsController < ApplicationController
 
   def show
    @mechanic = Mechanic.find(params[:id])
-   @rides = @mechanic.rides
+   @rides = @mechanic.alphabetize_rides
   end
 
   def update

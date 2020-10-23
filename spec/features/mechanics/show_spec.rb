@@ -45,4 +45,8 @@ describe 'mechanic show page' do
     expect(page.has_field?(:add_ride, type: 'text')).to eq(true)
     expect(page).to have_button('Submit')
   end
+
+  it 'shows all rides in alphabetical order' do
+save_and_open_page
+  end
 end
